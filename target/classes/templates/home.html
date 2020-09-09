@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" data-th-href="@{/css/style.css}">
+    <meta charset="UTF-8"/>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <div class="container">
+        <a class="navbar-brand" href="">
+            <img src="https://lh3.googleusercontent.com/proxy/ojOLQAgoqfFsUv8ZNEOFETB5CTH-5bNZ589AbgRUlkWLflMdtEwcujm0HpC3-17Golef7RfQvkO0LXqWZyzV11CoIogrIJtjzyFYZa85Q76uaJDeRHEpew-6PxWweRE"
+                 width="30" height="30" class="d-inline-block align-top bg-success rounded-circle" alt=""
+                 loading="lazy">
+            Üzenetek
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active ">
+                    <a class="nav-link" href="http://localhost:8080/greeting">Főoldal <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item  ">
+                    <a class="nav-link" href="http://localhost:8080/messages">Összes üzenet <span class="sr-only">(current)</span></a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="my-2 my-lg-0 ">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" href=http://localhost:8080/user_info>Felhasználói Információk <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item ">
+                    <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3 "
+                       href="http://localhost:8080/create">
+                        <img src="https://icons-for-free.com/iconfiles/png/512/journal+life+lifejournal+logo+social+write+writing+icon-1320190638075088737.png"
+                             width="20" height="20" class="d-inline-block align-top bg-success" alt="" loading="lazy">Új
+                        üzenet
+                    </a>
+                </li>
+                <li><a class="nav-link text-dark" th:href="@{/logout}" sec:authorize="hasRole('ROLE_USER')">LogOut</a></li>
+                <li th:if="!${#request.userPrincipal}">
+                    <a class="nav-link text-dark" th:href="@{/login_page}">LogIn</a>
+                </li>
+
+            </ul>
+
+
+        </div>
+    </div>
+</nav>
+<div class="container center my-5">
+    <h1>Üdvözlöm az üzenetküldőben</h1>
+</div>
+
+<nav class="navbar fixed-bottom navbar-light bg-success justify-content-center">
+    <img data-th-src="@{/img/unnamed.png}" width="150" height="80" alt="">
+</nav>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+</html>

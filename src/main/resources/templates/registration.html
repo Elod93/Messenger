@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" data-th-href="@{/css/style.css}">
+        <meta charset="UTF-8"/>
+    <title>Registration</title>
+</head>
+<body class="d-flex align-items-center">
+
+<div class="container ">
+    <h1 class="my-5 offset-2">Regisztrálás</h1>
+    <form method="post" th:action="@{/registration}" th:object="${registrationDTO}" class="align-content-lg-center ">
+       <div class="offset-2 ">
+            <label class="col-6" for="exampleInputEmail1">Felhasználónév</label>
+            <input  class="col-6  " type="text" style="width:40rem;"  data-th-field="*{name}" id="exampleInputEmail1" >
+            <label th:errorclass="form-field-error" data-th-if="${#fields.hasErrors('name')}" data-th-errors="*{name}">Text Error</label>
+            <small id="emailHelp" class="form-text text-muted">Kérem adjon meg egy egyedi felhasználónevet!</small>
+
+
+
+            <label class="col-6" for="exampleInputPassword1">Jelszó</label>
+            <input class="col-6 " type="password"  style="width:40rem;" th:field="*{password}" id="exampleInputPassword1">
+            <label th:errorclass="form-field-error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Text Error</label>
+
+            <label class="col-6 mt-3" for="exampleInputPassword2">Jelszó megerősítése</label>
+            <input class="col-6" type="password"  style="width:40rem;" th:field="*{password2}" id="exampleInputPassword2">
+            <label th:errorclass="form-field-error" th:if="${#fields.hasErrors('password2')}" th:errors="*{password2}">Text Error</label>
+
+           <label class="col-6 mt-3" for="exampleInputPassword3">E-mail cím</label>
+            <input class="col-6" type="email"  style="width:40rem;" th:field="*{email}" id="exampleInputPassword3">
+            <label th:errorclass="form-field-error"  th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Text Error</label>
+
+           <label class="col-6 mt-3" for="exampleInputPassword4">Születési dátum</label>
+            <input class="col-6" type="date"  style="width:40rem;" th:field="*{dateOfBirth}" id="exampleInputPassword4">
+            <label th:errorclass="form-field-error"  th:if="${#fields.hasErrors('dateOfBirth')}" th:errors="*{dateOfBirth}">Text Error</label>
+
+       </div>
+        <button type="submit" class="btn btn-primary btn-group-lg mt-3 offset-2 row">Submit</button>
+
+    </form>
+</div>
+</body>
+</html>

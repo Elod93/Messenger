@@ -1,0 +1,12 @@
+org/messenger/model/QMessage.class
+org/messenger/model/QAuthority.class
+org/messenger/controllers/RegistrationController.class
+org/messenger/Configuration/WebSecConfig.class
+org/messenger/Service/RegistrationService.class
+org/messenger/model/QTopic.class
+org/messenger/model/GoogleUserInfo.class
+org/messenger/Application.class
+org/messenger/controllers/MyControllerAdvice.class
+org/messenger/model/RegistrationDTO.class
+org/messenger/model/QSecurityUser.class
+org/messenger/Service/UserService.class

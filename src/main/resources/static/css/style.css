@@ -1,0 +1,41 @@
+/*CUSTOMS STYLES*/
+html,
+body,
+header
+
+body{
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    animation-delay: inherit;
+    flex-grow: 5;
+}
+.mycolor{
+    color: #6f42c1;
+    font-family: Arial-Helvetica,sans-serif;
+    font-size: large;
+}
+textarea{
+    width: 100%;
+}
+card{
+    width: 100%;
+    height: 100%;
+}
+.form-field-error{
+    color: #b21f2d;
+    font-weight: bold;
+    font-size: large;
+}
+.transparent{
+    opacity: 0.5;
+}
+.link{
+    color: #28a745;
+    font-weight: bold;
+    font-size: large;
+}

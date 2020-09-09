@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Please sign in</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous"/>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-light">
+    <div class="container">
+        <a class="navbar-brand text-dark" href="">
+
+            Üzenetek
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link text-dark" href="http://localhost:8080/greeting">Főoldal <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item  ">
+                    <a class="nav-link text-dark" href="http://localhost:8080/messages">Összes üzenet <span class="sr-only">(current)</span></a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="my-2 my-lg-0 ">
+            <ul class="navbar-nav mr-auto">
+
+                <li><a class="nav-link text-dark" href="http://localhost:8080/registration"> Regisztrácio</a> </li>
+
+            </ul>
+
+
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <form class="form-signin" method="post" data-th-action="@{/login_page}">
+        <h2 class="form-signin-heading">Please sign in </h2>
+        <p>
+            <label for="username" class="sr-only">Username</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
+        </p>
+        <p>
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+        </p>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <div class="container unauthenticated">
+            Belépés Google-el: <a href="/oauth2/authorization/google">Kattints ide</a>
+        </div>
+        <div class="container authenticated" style="display:none">
+            Logged in as: <span id="user"></span>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    $.get("/user", function(data) {
+        $("#user").html(data.name);
+        $(".unauthenticated").hide()
+        $(".authenticated").show()
+    });
+</script>
+</body>
+</html>
+
